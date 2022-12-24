@@ -41,14 +41,14 @@ SET @json = N'
 			}, {
 				"orga_codigo": 1,
 				"clie_numidentificacion": "0929847044",
-				"clie_nombresCompletos": "ESTUPIÑAN MEJIA MARCELO ISRAEL",
+				"clie_nombresCompletos": "ESTUPIÃ‘AN MEJIA MARCELO ISRAEL",
 				"IdUserBiometrico": "16152",
 				"orga_codigo_alimentacion": "9",
 				"bode_codigo_alimentacion": 117
 			}, {
 				"orga_codigo": 1,
 				"clie_numidentificacion": "0924373616",
-				"clie_nombresCompletos": "FLORES CEDEÑO DAVID ORLANDO",
+				"clie_nombresCompletos": "FLORES CEDEÃ‘O DAVID ORLANDO",
 				"IdUserBiometrico": "16007",
 				"orga_codigo_alimentacion": "9",
 				"bode_codigo_alimentacion": 56
@@ -164,9 +164,9 @@ SELECT * FROM TbEstado
  SELECT * FROM TbClientes WHERE clie_numidentificacion = '0992883677001' -- VUMILATINA --> Alianza (Zona) de Novacocina. Cliente Laffa
  
  SELECT * FROM TbAlianza WHERE alia_razonsocial LIKE '%NESTLE%'
- SELECT * FROM TbBodega WHERE bode_descripcion LIKE '%NESTLÉ%'
+ SELECT * FROM TbBodega WHERE bode_descripcion LIKE '%NESTLÃ‰%'
 
-  SELECT * FROM TbZonasBodegas
+ SELECT * FROM TbZonasBodegas
  SELECT TORG.orga_nombre, TBOD.bode_descripcion, TZON.zona_nombre FROM TbZonasBodegas TZB
 	INNER JOIN TbOrganizaciones TORG
 		ON TORG.orga_codigo = TZB.orga_codigo
@@ -177,6 +177,8 @@ SELECT * FROM TbEstado
 		ON TBOD.orga_codigo = TZB.orga_codigo
 		AND TBOD.bode_codigo = TZB.bode_codigo
 
+
+-- Correcciones a la estructura de la tabla clientes
   --ALTER TABLE dbo.Tbclientes DROP COLUMN orga_codigo_alimentacion;
   --ALTER TABLE dbo.Tbclientes DROP COLUMN bode_codigo_alimentacion;
   --ALTER TABLE dbo.Tbclientes ADD orga_codigo_alimentacion INT
